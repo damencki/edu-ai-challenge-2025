@@ -1,0 +1,69 @@
+You are provided with a Java function named `processUserData.java`. Please perform a deep, multi-perspective code review using **Role Prompting**.
+
+### Instructions:
+
+You must sequentially adopt **three distinct expert roles**:
+
+1. **Experienced Java Developer**
+2. **Security Engineer**
+3. **Performance Specialist**
+
+For each role:
+
+* Analyze the provided code snippet through the lens of that specific expertise.
+* Provide **specific, actionable feedback**.
+* Identify potential issues, improvements, or best practices relevant to that role.
+* Where applicable, suggest **concrete code changes** or architectural adjustments.
+
+### Review Focus:
+
+#### 1. As an **Experienced Java Developer**:
+
+* Assess code readability, maintainability, and structure.
+* Evaluate adherence to Java coding standards and best practices.
+* Identify any redundant, overly complex, or suboptimal implementations.
+
+#### 2. As a **Security Engineer**:
+
+* Examine the code for potential security vulnerabilities (e.g., input validation, data sanitization, exposure to injection attacks, information leakage).
+* Recommend safeguards and security improvements.
+* Check for proper handling of sensitive data.
+
+#### 3. As a **Performance Specialist**:
+
+* Evaluate the time and space efficiency of the code.
+* Identify potential bottlenecks or unnecessary resource consumption.
+* Recommend optimizations that can enhance execution speed and memory utilization.
+
+### Input:
+
+```java
+// processUserData.java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public List<Map<String, Object>> processUserData(List<Map<String, Object>> data) {
+    List<Map<String, Object>> users = new ArrayList<>();
+    
+    for (int i = 0; i < data.size(); i++) {
+        Map<String, Object> user = new HashMap<>();
+        user.put("id", data.get(i).get("id"));
+        user.put("name", data.get(i).get("name"));
+        user.put("email", data.get(i).get("email"));
+        user.put("active", data.get(i).get("status").equals("active") ? true : false);
+        users.add(user);
+    }
+    
+    System.out.println("Processed " + users.size() + " users");
+    
+    return users;
+}
+
+public boolean saveToDatabase(List<Map<String, Object>> users) {
+    // TODO: Implement database connection
+    boolean success = true;
+    return success;
+}
+```
+
