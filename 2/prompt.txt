@@ -1,0 +1,11 @@
+act as qa engineer
+use Prompt Engineering; Output Formatting; Natural Language Understanding
+convert informal bug report  into a clear, well-structured bug ticket. The output should follow this format:
+Title
+Description
+Steps to Reproduce
+Expected vs Actual Behavior
+Environment (if known)
+Severity or Impact
+
+Logout button doesn’t work on Safari. It just doesn’t respond.
